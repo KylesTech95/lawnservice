@@ -70,13 +70,12 @@
             $insertuser = pg_query($pool, "insert into users(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
             $result = pg_query($pool, "select * from users");
             // $dumparr = var_dump(pg_fetch_all($result)) ;
-            $arr = pg_fetch_all($result);
-            for($i=0;$i <= count($arr);$i++){
-              echo $o->{$arr[$i]};
-            }
-            // echo var_dump($pool);
+            // $arr = var_dump(pg_fetch_all($result));
+            // echo $arr;
+            // echo "<br>"
+            // echo var_dump(pg_fetch_all($result));
+            // echo var_dump(pg_fetch_all($result));
             
-?>
          
 
         <!-- footer -->

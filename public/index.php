@@ -72,7 +72,7 @@
        <div id="cta-wrapper">
         <div id="cta-container" class="reg-column">
           <!-- form -->
-           <form id="cta-form" method="POST" action="http://localhost:5777/public/submission.php">
+           <form id="cta-form" method="POST" action="http://localhost:5777/submission.php">
             <input type="text" name="name" id="name-input" autocomplete = "off" placeholder="Full Name" required>
             <input type="email" name="email" id="email-input" autocomplete = "off" placeholder="Email" required>
             <input type="text" name="phone" id="phone-input" autocomplete = "off" placeholder="Phone">
@@ -109,7 +109,7 @@
         <div id="cta-wrapper">
           <div id="cta-container" class="rev-column">
             <!-- form -->
-            <form id="cta-form" method="POST" action="http://localhost:5777/public/submission.php">
+            <form id="cta-form" method="POST" action="http://localhost:5777/submission.php">
               <input type="text" name="name" id="name-input" autocomplete = "off" placeholder="Full Name" required>
               <input type="email" name="email" id="email-input" autocomplete = "off" placeholder="Email" required>
               <input type="text" name="phone" id="phone-input" autocomplete = "off" placeholder="Phone">
