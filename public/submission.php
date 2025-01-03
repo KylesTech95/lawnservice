@@ -75,7 +75,7 @@
             // echo "<br>"
             // echo var_dump(pg_fetch_all($result));
             // echo var_dump(pg_fetch_all($result));
-            
+?>
          
 
         <!-- footer -->
