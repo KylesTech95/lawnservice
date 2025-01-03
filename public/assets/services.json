@@ -1,0 +1,20 @@
+{
+    "services":{
+        "lawn-cutting":{
+            "description":"Precise, even-level lawn-cuts",
+            "image":"../media/pic4.jpg"
+        },
+        "lawn-edging":{
+            "description":"Unique line to keep grass within the boundaries",
+            "image":"../media/pic5.jpg"
+        },
+        "Trimming (plants, trees & bushes)":{
+            "description":"Consistent trimming for proper maintenance",
+            "image":"../media/pic3.jpg"
+        },
+        "landscape-design":{
+            "description":"Articulate, unique designs to beautify your property",
+            "image":"../media/pic1.jpg"
+        }
+    }
+}
