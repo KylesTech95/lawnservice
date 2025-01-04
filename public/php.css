@@ -29,7 +29,7 @@ body{
 }
 
 #about-container-php{
-    height:15vh;
+    height:260px;
     width:100%;
     display:flex;
     flex-direction: column;

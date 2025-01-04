@@ -66,18 +66,16 @@
             echo "<div class='message' id='message-id'>$message</div>";
             // connect database
             // $pginfo = phpinfo();
-            $pool = pg_connect("host=localhost user=postgres port=5432 dbname=test");
-            $insertuser = pg_query($pool, "insert into users(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
-            $result = pg_query($pool, "select * from users");
-            $result = pg_fetch_all($result);
-            // echo var_dump($arr);
-            echo "<br>";
-            // convert result to a string with json_encode, then var_dump all
-            $str = var_dump(json_encode($result));
-            echo "<br>";
-            echo "<br>";
-            
-
+            $pool = pg_connect("host=localhost user=reguser_503 port=5432 dbname=lawnservice");
+            $insertuser = pg_query($pool, "insert into userbase(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
+            // $result = pg_query($pool, "select * from userbase");
+            // $result = pg_fetch_all($result);
+            // // echo var_dump($arr);
+            // echo "<br>";
+            // // convert result to a string with json_encode, then var_dump all
+            // $str = var_dump(json_encode($result));
+            // echo "<br>";
+            // echo "<br>";
 
             // iterate through rows
             // echo "\nrow:\n";
