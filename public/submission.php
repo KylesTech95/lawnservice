@@ -69,12 +69,23 @@
             $pool = pg_connect("host=localhost user=postgres port=5432 dbname=test");
             $insertuser = pg_query($pool, "insert into users(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
             $result = pg_query($pool, "select * from users");
-            // $dumparr = var_dump(pg_fetch_all($result)) ;
-            // $arr = var_dump(pg_fetch_all($result));
-            // echo $arr;
-            // echo "<br>"
-            // echo var_dump(pg_fetch_all($result));
-            // echo var_dump(pg_fetch_all($result));
+            $result = pg_fetch_all($result);
+            // echo var_dump($arr);
+            echo "<br>";
+            // convert result to a string with json_encode, then var_dump all
+            $str = var_dump(json_encode($result));
+            echo "<br>";
+            echo "<br>";
+            
+
+
+            // iterate through rows
+            // echo "\nrow:\n";
+            // for($i=0;$i<count($arr);$i++){
+            //   $row = $arr[$i];
+            //   echo $row;
+            // }
+            echo "<br>";
 ?>
          
 
