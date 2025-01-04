@@ -31,6 +31,44 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: pipeline; Type: TABLE; Schema: marketplace; Owner: postgres
+--
+
+CREATE TABLE marketplace.pipeline (
+    uid integer NOT NULL,
+    firstname character varying(50) NOT NULL,
+    lastname character varying(50) NOT NULL,
+    phone text NOT NULL,
+    email character varying(40) NOT NULL,
+    isverified boolean DEFAULT false
+);
+
+
+ALTER TABLE marketplace.pipeline OWNER TO postgres;
+
+--
+-- Name: pipeline_uid_seq; Type: SEQUENCE; Schema: marketplace; Owner: postgres
+--
+
+CREATE SEQUENCE marketplace.pipeline_uid_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE marketplace.pipeline_uid_seq OWNER TO postgres;
+
+--
+-- Name: pipeline_uid_seq; Type: SEQUENCE OWNED BY; Schema: marketplace; Owner: postgres
+--
+
+ALTER SEQUENCE marketplace.pipeline_uid_seq OWNED BY marketplace.pipeline.uid;
+
+
+--
 -- Name: userbase; Type: TABLE; Schema: marketplace; Owner: postgres
 --
 
@@ -68,6 +106,13 @@ ALTER SEQUENCE marketplace.userbase_uid_seq OWNED BY marketplace.userbase.uid;
 
 
 --
+-- Name: pipeline uid; Type: DEFAULT; Schema: marketplace; Owner: postgres
+--
+
+ALTER TABLE ONLY marketplace.pipeline ALTER COLUMN uid SET DEFAULT nextval('marketplace.pipeline_uid_seq'::regclass);
+
+
+--
 -- Name: userbase uid; Type: DEFAULT; Schema: marketplace; Owner: postgres
 --
 
@@ -75,19 +120,44 @@ ALTER TABLE ONLY marketplace.userbase ALTER COLUMN uid SET DEFAULT nextval('mark
 
 
 --
+-- Data for Name: pipeline; Type: TABLE DATA; Schema: marketplace; Owner: postgres
+--
+
+COPY marketplace.pipeline (uid, firstname, lastname, phone, email, isverified) FROM stdin;
+1					f
+2	One	Two	1231231234	ot@user.com	f
+3	One	Two	1231231234	ot@user.com	f
+\.
+
+
+--
 -- Data for Name: userbase; Type: TABLE DATA; Schema: marketplace; Owner: postgres
 --
 
 COPY marketplace.userbase (uid, firstname, lastname, phone, email) FROM stdin;
-1	Sadsad	dsa	asdsd	asdsad
 \.
+
+
+--
+-- Name: pipeline_uid_seq; Type: SEQUENCE SET; Schema: marketplace; Owner: postgres
+--
+
+SELECT pg_catalog.setval('marketplace.pipeline_uid_seq', 3, true);
 
 
 --
 -- Name: userbase_uid_seq; Type: SEQUENCE SET; Schema: marketplace; Owner: postgres
 --
 
-SELECT pg_catalog.setval('marketplace.userbase_uid_seq', 1, true);
+SELECT pg_catalog.setval('marketplace.userbase_uid_seq', 1, false);
+
+
+--
+-- Name: pipeline pipeline_pkey; Type: CONSTRAINT; Schema: marketplace; Owner: postgres
+--
+
+ALTER TABLE ONLY marketplace.pipeline
+    ADD CONSTRAINT pipeline_pkey PRIMARY KEY (uid);
 
 
 --
@@ -113,10 +183,17 @@ REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 
 
 --
--- Name: TABLE userbase; Type: ACL; Schema: marketplace; Owner: postgres
+-- Name: TABLE pipeline; Type: ACL; Schema: marketplace; Owner: postgres
 --
 
-GRANT INSERT ON TABLE marketplace.userbase TO reguser_503;
+GRANT INSERT ON TABLE marketplace.pipeline TO reguser_503;
+
+
+--
+-- Name: SEQUENCE pipeline_uid_seq; Type: ACL; Schema: marketplace; Owner: postgres
+--
+
+GRANT USAGE ON SEQUENCE marketplace.pipeline_uid_seq TO reguser_503;
 
 
 --

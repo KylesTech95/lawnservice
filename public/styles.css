@@ -124,16 +124,17 @@ transform:translate(0,-5px)scale(.9);
     height:100%;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     /* border:3px solid red; */
 }
 .list-item{
     height:100%;
-    width:100%;
+    /* width:100%; */
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right:3rem;
 }
 .list-link{
     height:100%;

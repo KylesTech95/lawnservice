@@ -1,3 +1,24 @@
+<?php
+// variables 
+$name = $_POST['name'];
+$splitname = explode(" ",$name);
+$firstname = ucfirst($splitname[0]);
+$lastname = ucfirst($splitname[1]);
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$disabledb = false;
+
+// input not complete
+function redirectIndex($name,$firstname,$lastname,$email,$phone){
+// if input not true redirect to index.php
+  if(!$firstname||!$lastname||!$email||!$phone) {
+    header('Location: '.'http://localhost:5777/index.php');
+    $GLOBALS['disabledb'] = true;
+    }
+}
+redirectIndex($name,$firstname,$lastname,$email,$phone);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,119 +33,31 @@
 <body>
   <!-- wrapper -->
   <div id="wrapper">
-    
     <!-- header -->
-     <div id="header" class="header-container">
-      
-      <!-- logo -->
-       <div id="home-links-container">
-        <a href="index.php" id="logo-href">
-          <div id="logo-container">
-            <!-- logosticks -->
-            <div id="logo-brand-container">
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-            </div>
-            <!-- logo-label -->
-             <h3 id="logo-label">LOCO Lawn Service</h3>
-          </div>
-         </a>
-          <!-- phone number -->
-          <a href="#">
-            <p id="header-phone-para">123-456-7890</p>
-          </a>
-       </div>
-       
-      <!-- navigation -->
-      <nav id="nav" class="navigation-container">
-        <ul class="list-container">
-          <li class="list-item"><a href="index.php" class="list-link">Home</a></li>
-          <li class="list-item"><a href="index.php#services" class="list-link">Services</a></li>
-          <li class="list-item"><a href="#contact" class="list-link">Contact</a></li>
-        </ul>
-       </nav>
-     </div>
+     <?php include 'partials/header.php' ?>
    <!-- about section -->
    <div id="about-container-php">
         <div class="header-para"><em>We are here for you!</em></div>
       </div>
      <!-- user submission acknowledged -->
       <?php
-            $name = $_POST['name'];
-            $splitname = explode(" ",$name);
-            $firstname = ucfirst($splitname[0]);
-            $firstInitial = strtoupper(substr($firstname,0,1));
-            $notFirstInitial = substr($firstname,1);
-            $lastname = $splitname[1];  
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
             //_____________________________
-            $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reah out to you shortly via phone-call & email. <br> Talk to you soon!</p>";
-            echo "<div class='message' id='message-id'>$message</div>";
-            // connect database
-            // $pginfo = phpinfo();
-            $pool = pg_connect("host=localhost user=reguser_503 port=5432 dbname=lawnservice");
-            $insertuser = pg_query($pool, "insert into userbase(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
-            // $result = pg_query($pool, "select * from userbase");
-            // $result = pg_fetch_all($result);
-            // // echo var_dump($arr);
-            // echo "<br>";
-            // // convert result to a string with json_encode, then var_dump all
-            // $str = var_dump(json_encode($result));
-            // echo "<br>";
-            // echo "<br>";
-
-            // iterate through rows
-            // echo "\nrow:\n";
-            // for($i=0;$i<count($arr);$i++){
-            //   $row = $arr[$i];
-            //   echo $row;
-            // }
-            echo "<br>";
+            if(!$disabledb) {
+              $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reah out to you shortly via phone-call & email. <br> Talk to you soon!</p>";
+              echo "<div class='message' id='message-id'>$message</div>";
+              // connect database
+              // $pginfo = phpinfo();
+              $pipeline = pg_connect("host=localhost user=reguser_503 port=5432 dbname=lawnservice");
+              $insertuser = pg_query($pipeline, "insert into pipeline(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
+              // $result = pg_query($pool, "select * from userbase");
+              // $result = pg_fetch_all($result);
+              echo "<br>";
+            }
 ?>
          
 
         <!-- footer -->
-         <footer id="contact" class="footer">
-          <!-- logo -->
-       <div id="home-links-container" class="footer-link">
-        <a href="index.php" id="logo-href">
-          <div id="logo-container">
-            <!-- logosticks -->
-            <div id="logo-brand-container">
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-            </div>
-            <!-- logo-label -->
-             <h3 id="logo-label">LOCO Lawn Service</h3>
-          </div>
-         </a>
-          <!-- phone number -->
-          <a href="#">
-            <p id="header-phone-para">123-456-7890</p>
-          </a>
-       </div>
-        <ul id="footer-list-container">
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Home</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#services" class="footer-list-link">Services</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Legal</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Careers</a>
-          </li>
-        </ul>
-         </footer>
+        <?php include 'partials/footer.php' ?>
   </div>
   <!-- <script src="main.js" type="module"></script> -->
 </body>

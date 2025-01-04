@@ -25,39 +25,7 @@
       <i class="fa-solid fa-trash trash"></i>
      </div>
     <!-- header -->
-     <div id="header" class="header-container">
-      
-      <!-- logo -->
-       <div id="home-links-container">
-        <a href="index.php" id="logo-href">
-          <div id="logo-container">
-            <!-- logosticks -->
-            <div id="logo-brand-container">
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-            </div>
-            <!-- logo-label -->
-             <h3 id="logo-label">LOCO Lawn Service</h3>
-          </div>
-         </a>
-          <!-- phone number -->
-          <a href="#">
-            <p id="header-phone-para">123-456-7890</p>
-          </a>
-       </div>
-       
-      <!-- navigation -->
-       <nav id="nav" class="navigation-container">
-        <ul class="list-container">
-          <li class="list-item"><a href="index.php" class="list-link">Home</a></li>
-          <li class="list-item"><a href="#services" class="list-link">Services</a></li>
-          <li class="list-item"><a href="#contact" class="list-link">Contact</a></li>
-        </ul>
-       </nav>
-     </div>
+     <?php include 'partials/header.php' ?>
      <!-- about section -->
       <div id="about-container">
         <div class="header-design-container">
@@ -80,8 +48,8 @@
            </form>
            <div id="cta-disclaimer">
               <p id="cta-disclaimer-para" class="no-pointer">Post <b style="font-weight:bold">or</b> give us a call for a <b style="color:rgb(248, 197, 44)">FREE</b> quote</p>
-              <a href="#">
-                <p id="cta-phone-para" class="phone-para-class">123-456-7890</p>
+              <a href="tel:+12345678910">
+                <p id="cta-phone-para" class="phone-para-class">234-567-8910</p>
               </a>
           </div>
          </div>
@@ -117,8 +85,8 @@
              </form>
              <div id="cta-disclaimer">
                 <p id="cta-disclaimer-para" class="no-pointer">Post <b style="font-weight:bold">or</b> give us a call for a <b style="color:rgb(248, 197, 44)">FREE</b> quote</p>
-                <a href="#">
-                  <p id="cta-phone-para" class="phone-para-class">123-456-7890</p>
+                <a href="tel:+12345678910">
+                  <p id="cta-phone-para" class="phone-para-class">234-567-8910</p>
                 </a>
             </div>
            </div>
@@ -130,43 +98,7 @@
             <i class="fa-solid fa-arrow-up btt-up"></i>
           </div>
         </div>
-         <footer id="contact" class="footer">
-          <!-- logo -->
-       <div id="home-links-container" class="footer-link">
-        <a href="#" id="logo-href">
-          <div id="logo-container">
-            <!-- logosticks -->
-            <div id="logo-brand-container">
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-              <span class="logo-stick"></span>
-            </div>
-            <!-- logo-label -->
-             <h3 id="logo-label">LOCO Lawn Service</h3>
-          </div>
-         </a>
-          <!-- phone number -->
-          <a href="#">
-            <p id="header-phone-para">123-456-7890</p>
-          </a>
-       </div>
-        <ul id="footer-list-container">
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Home</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#services" class="footer-list-link">Services</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Legal</a>
-          </li>
-          <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Careers</a>
-          </li>
-        </ul>
-         </footer>
+         <?php include 'partials/footer.php' ?>
   </div>
   <script src="main.js" type="module"></script>
 </body>
