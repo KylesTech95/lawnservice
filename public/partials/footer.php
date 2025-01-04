@@ -22,7 +22,7 @@
        </div>
         <ul id="footer-list-container">
           <li class="footer-list-item">
-            <a href="#" class="footer-list-link">Home</a>
+            <a href="index.php" class="footer-list-link">Home</a>
           </li>
           <li class="footer-list-item">
             <a href="index.php#services" class="footer-list-link">Services</a>
