@@ -43,7 +43,7 @@ redirectIndex($name,$firstname,$lastname,$email,$phone);
       <?php
             //_____________________________
             if(!$disabledb) {
-              $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reah out to you shortly via phone-call & email. <br> Talk to you soon!</p>";
+              $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reach out to you shortly via telephone & email. <br> Talk to you soon!</p>";
               echo "<div class='message' id='message-id'>$message</div>";
               // connect database
               // $pginfo = phpinfo();

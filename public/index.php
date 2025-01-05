@@ -11,19 +11,7 @@
 <body>
   <!-- wrapper -->
   <div id="wrapper">
-    
-    <!-- call to action (cta) (repairs) -->
-     <div id="repair-cta-container" class="cta-popout-container no-display">
-      <h4 id="repair-cta-title">We repair Damages. <br>Call us Now!</h4>
-      <!-- icon -->
-      <i class="fa-solid fa-hammer hammer"></i>
-     </div>
-     <!-- call to action (cta) (junk/waste removal) -->
-     <div id="junk-cta-container" class="cta-popout-container no-display">
-      <h4 id="junk-cta-title">Got Bulk Trash? We can make that disappear!<br>Call us Now!</h4>
-      <!-- icon -->
-      <i class="fa-solid fa-trash trash"></i>
-     </div>
+  
     <!-- header -->
      <?php include 'partials/header.php' ?>
      <!-- about section -->
@@ -63,6 +51,16 @@
        </div>
        <!-- services -->
         <div id="services-container">
+           <!-- call to action (cta) (repairs) -->
+            <div id="repair-cta-container" class="cta-popout-container">
+              <h4 id="repair-cta-title">We repair Damages. <br>Call us Now!</h4>
+              <!-- icon -->
+            </div>
+            <!-- call to action (cta) (junk/waste removal) -->
+            <div id="junk-cta-container" class="cta-popout-container">
+              <h4 id="junk-cta-title">Got Bulk Trash? We can make that disappear!<br>Call us Now!</h4>
+              <!-- icon -->
+            </div>
           <div class="header-design-container services-margin">
             <hr class="header-hr">
             <h4 class="header-design-h4" id="services">Services</h4>

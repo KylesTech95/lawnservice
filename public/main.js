@@ -76,8 +76,41 @@ function createService(name,description,image){
 
 
 
+// cta - junk and repairs
+const repairContainer = document.getElementById('repair-cta-container')
+const junkContainer = document.getElementById('junk-cta-container')
+const ctaArr = new Array(2)
+ctaArr[0] = junkContainer
+ctaArr[1] = repairContainer
 
+// helper function to detect scroll direction
+const detectScrollDir = (arr) => {
+    let prev=arr[0], curr=arr[1];
+    return prev > curr ? 'up' : prev < curr ? 'down' : null;
+}
+// track scroll and push in array
+let scrollarr = []
+let st = 0;
+let direction = [1,-1]
+window.onscroll = e => {
+    // capture/track scrollY
+    let scrollY = Math.ceil(window.scrollY)
+    scrollarr.push(scrollY)
+    scrollarr=scrollarr.slice(-2)
 
+    // iterate through both cta's
+    ctaArr.forEach((elem,idx)=>{
+        
+        // rotation begins
 
+    // conditions
+    if(detectScrollDir(scrollarr)=='down'){
+        console.log('down detected')
+    } 
+    else {
+        console.log('up detected')
+    }
+    });
+};
 
 
