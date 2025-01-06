@@ -53,12 +53,18 @@
         <div id="services-container">
            <!-- call to action (cta) (repairs) -->
             <div id="repair-cta-container" class="cta-popout-container">
-              <h4 id="repair-cta-title">We repair Damages. <br>Call us Now!</h4>
+              <h4 id="repair-cta-title">We repair Damages.<i class="fa-solid fa-circle-info information"></i>
+              <p class="tooltip tip-transparent">i.e. Fence, tree-damage</p>
+            </h4>
+              <div class="call-us-para"><a href="#">Call us Now!</a></div>
               <!-- icon -->
             </div>
             <!-- call to action (cta) (junk/waste removal) -->
             <div id="junk-cta-container" class="cta-popout-container">
-              <h4 id="junk-cta-title">Got Bulk Trash? We can make that disappear!<br>Call us Now!</h4>
+              <h4 id="junk-cta-title">Got Bulk Trash?<br>We can make that disappear!<i class="fa-solid fa-circle-info information"></i>
+              <p class="tooltip tip-transparent">Dedicated bulk pickup<br>Available 24/7</p>
+            </h4>
+              <div class="call-us-para"><a href="#">Call us Now!</a></div>
               <!-- icon -->
             </div>
           <div class="header-design-container services-margin">

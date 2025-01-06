@@ -14,7 +14,7 @@
     }
     // remove child from parent
     export function removeChildFromDaddy(child,daddy){
-        return checkChildNotInParent(child,daddy) != daddy ? console.log('child is not of parent') : child.daddy.removeChild(child)
+        return checkChildNotInParent(child,daddy) ? console.log('child is not of parent') : daddy.removeChild(child)
     }
     // check child element not within parent element
     export function checkChildNotInParent(child,parent){
@@ -36,11 +36,7 @@
                        //_______________________//
           
     // event listeners
-    // cta pop out
-    export function ctaPopOut(e){
-        //method
-        }
-        // brighten service descriptions on mouseover
+    // brighten service descriptions on mouseover
     export function brightenDescription(e){
         // console.log('mouseover is active')
         const target = e.currentTarget;

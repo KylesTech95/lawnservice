@@ -1,10 +1,8 @@
+import {userTypingInput,removeChildFromDaddy,scrollToNextContent,fetchJSON,btttFunction,revertDescription,brightenDescription,appendChildToDaddy} from './tools/tools.js' 
 const services = await fetchJSON('./assets/services.json')
 const servicesListContainer = document.getElementById('services-list-container')
-// fetch services.json file
-const ctaPopOuts = [...document.querySelectorAll('.cta-popout-container')]
 const btt_container = document.getElementById('back-to-top')
 const ctaSubmissions = document.querySelectorAll('#submit-para')
-import {ctaPopOut,userTypingInput,scrollToNextContent,fetchJSON,btttFunction,revertDescription,brightenDescription,checkChildNotInParent,appendChildToDaddy,removeChildFromDaddy} from './tools/tools.js' 
 
 // append services to ul
 const servicesObj = services['services']
@@ -72,8 +70,7 @@ function createService(name,description,image){
     li.onmouseover = brightenDescription
     // mouseout li - revert description
     li.onmouseout = revertDescription
-    }
-
+}
 
 
 // cta - junk and repairs
@@ -82,35 +79,51 @@ const junkContainer = document.getElementById('junk-cta-container')
 const ctaArr = new Array(2)
 ctaArr[0] = junkContainer
 ctaArr[1] = repairContainer
-
+let scrollarr = []
+let side = ['left','right']
 // helper function to detect scroll direction
 const detectScrollDir = (arr) => {
     let prev=arr[0], curr=arr[1];
     return prev > curr ? 'up' : prev < curr ? 'down' : null;
 }
 // track scroll and push in array
-let scrollarr = []
-let st = 0;
-let direction = [1,-1]
+
 window.onscroll = e => {
     // capture/track scrollY
     let scrollY = Math.ceil(window.scrollY)
     scrollarr.push(scrollY)
     scrollarr=scrollarr.slice(-2)
-
     // iterate through both cta's
     ctaArr.forEach((elem,idx)=>{
-        
-        // rotation begins
-
-    // conditions
-    if(detectScrollDir(scrollarr)=='down'){
-        console.log('down detected')
-    } 
-    else {
-        console.log('up detected')
-    }
+        // boolean - detect cta
+            // conditions - scroll down
+        if(detectScrollDir(scrollarr)=='down'){
+            console.log('down detected')
+            if(ctaArr[idx].getBoundingClientRect().y <= scrollY){
+                ctaArr[idx].style = `${side[idx]}:25px;transition:.75s;transform:scale(1.10);`;
+            }
+        } 
+        // scroll up
+        else {
+            console.log('up detected')
+            if(ctaArr[idx].getBoundingClientRect().y >= scrollY){
+                ctaArr[idx].style = `${side[idx]}:-300px;transition:.75s`;
+            }
+        }
     });
 };
-
+let infotime;
+document.querySelectorAll('.information').forEach((info,idx)=>{
+    info.onmouseover = e => {
+        const infotext = e.currentTarget.nextElementSibling;
+        clearTimeout(infotime)
+        infotime = setTimeout(()=>{
+            infotext.classList.remove('tip-transparent')
+        },250)
+    }
+    info.onmouseout = e => {
+        const infotext = e.currentTarget.nextElementSibling;
+        infotext.classList.add('tip-transparent')
+    }
+})
 
