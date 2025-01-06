@@ -39,7 +39,7 @@ scrollToNextContent(document.getElementById('scroll-to'))
 
 // create service function
 function createService(name,description,image){
-    const cssUrlBg = `background-image:url(${image});background-size:cover;background-repeat:no-repeat;background-color:#fff;background-blend-mode:multiply;`
+    const cssUrlBg = `background-image:url(${image});width:100%;background-size:cover;background-repeat:no-repeat;background-color:#fff;background-blend-mode:multiply;`
     const li = document.createElement('li')
     const content = document.createElement('div')
     const title = document.createElement('p')

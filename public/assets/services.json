@@ -1,10 +1,10 @@
 {
     "services":{
-        "lawn-cutting":{
+        "Cutting":{
             "description":"Precise, even-level lawn-cuts",
             "image":"../media/pic4.jpg"
         },
-        "lawn-edging":{
+        "Edging":{
             "description":"Unique line to keep grass within the boundaries",
             "image":"../media/pic5.jpg"
         },
@@ -12,9 +12,13 @@
             "description":"Consistent trimming for proper maintenance",
             "image":"../media/pic3.jpg"
         },
-        "landscape-design":{
+        "Landscape Design":{
             "description":"Articulate, unique designs to beautify your property",
             "image":"../media/pic1.jpg"
+        },
+        "Pest Control":{
+            "description":"Protect your property from nuisances",
+            "image":"../media/uglyiguana.jpg"
         }
     }
 }

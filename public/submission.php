@@ -37,12 +37,10 @@ redirectIndex($name,$firstname,$lastname,$email,$phone);
      <?php include 'partials/header.php' ?>
    <!-- about section -->
    <div id="about-container-php">
-        <div class="header-para"><em>We are here for you!</em></div>
+        <h1 class="header-para"><em>We are here for you!</em></h1>
       </div>
      <!-- user submission acknowledged -->
       <?php
-      echo "environment vars";
-      echo $_ENV['DBPW'];
             //_____________________________
             if(!$disabledb) {
               $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reach out to you shortly via telephone & email. <br> Talk to you soon!</p>";

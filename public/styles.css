@@ -209,6 +209,9 @@ display:none;
     color:ghostwhite;
     text-align: center;
 }
+.header-para{
+    margin-top:1rem;
+}
 #about-para{
     width:100%;
     margin-top: 2rem;

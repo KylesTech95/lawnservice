@@ -21,7 +21,7 @@
           <h4 class="header-design-h4">Our Mission</h4>
           <hr class="header-hr">
         </div>
-        <div class="header-para"><em>We aim to meet your lawncare needs & keep you up to code!</em></div>
+        <h1 class="header-para"><em>We aim to meet your lawncare needs & keep you up to code!</em></h1>
       </div>
 
       <!-- cta-container -->
@@ -54,14 +54,14 @@
            <!-- call to action (cta) (repairs) -->
             <div id="repair-cta-container" class="cta-popout-container">
               <h4 id="repair-cta-title">We repair Damages.<i class="fa-solid fa-circle-info information"></i>
-              <p class="tooltip tip-transparent">i.e. Fence, tree-damage</p>
+              <p class="tooltip tip-transparent">i.e. Fence, tree damage, etc...</p>
             </h4>
               <div class="call-us-para"><a href="#">Call us Now!</a></div>
               <!-- icon -->
             </div>
             <!-- call to action (cta) (junk/waste removal) -->
             <div id="junk-cta-container" class="cta-popout-container">
-              <h4 id="junk-cta-title">Got Bulk Trash?<br>We can make that disappear!<i class="fa-solid fa-circle-info information"></i>
+              <h4 id="junk-cta-title">Got Bulk Trash?<br>Watch it disappear!<i class="fa-solid fa-circle-info information"></i>
               <p class="tooltip tip-transparent">Dedicated bulk pickup<br>Available 24/7</p>
             </h4>
               <div class="call-us-para"><a href="#">Call us Now!</a></div>
