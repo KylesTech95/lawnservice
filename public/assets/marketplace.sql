@@ -193,7 +193,7 @@ GRANT INSERT ON TABLE marketplace.pipeline TO reguser_503;
 -- Name: SEQUENCE pipeline_uid_seq; Type: ACL; Schema: marketplace; Owner: postgres
 --
 
-GRANT USAGE ON SEQUENCE marketplace.pipeline_uid_seq TO reguser_503;
+GRANT USAGE ON SEQUENCE marketplace.gid_seq TO reguser_503;
 
 
 --

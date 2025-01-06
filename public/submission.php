@@ -41,6 +41,8 @@ redirectIndex($name,$firstname,$lastname,$email,$phone);
       </div>
      <!-- user submission acknowledged -->
       <?php
+      echo "environment vars";
+      echo $_ENV['DBPW'];
             //_____________________________
             if(!$disabledb) {
               $message = "<p>$firstname, Thank you for your submission!<br>A member from our team will reach out to you shortly via telephone & email. <br> Talk to you soon!</p>";
@@ -48,7 +50,7 @@ redirectIndex($name,$firstname,$lastname,$email,$phone);
               // connect database
               // $pginfo = phpinfo();
               $pipeline = pg_connect("host=localhost user=reguser_503 port=5432 dbname=lawnservice");
-              $insertuser = pg_query($pipeline, "insert into pipeline(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
+                $insertuser = pg_query($pipeline, "insert into pipeline(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
               // $result = pg_query($pool, "select * from userbase");
               // $result = pg_fetch_all($result);
               echo "<br>";
