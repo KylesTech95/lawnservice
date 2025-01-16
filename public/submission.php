@@ -1,22 +1,24 @@
 <?php
 // variables 
-$name = $_POST['name'];
-$splitname = explode(" ",$name);
-$firstname = ucfirst($splitname[0]);
-$lastname = ucfirst($splitname[1]);
+// $name = $_POST['name'];
+// $splitname = explode(" ",$name);
+// $firstname = ucfirst($splitname[0]);
+// $lastname = ucfirst($splitname[1]);
+$firstname = $_POST['fname'];
+$lastname = $_POST['lname'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $disabledb = false;
 
 // input not complete
-function redirectIndex($name,$firstname,$lastname,$email,$phone){
+function redirectIndex($firstname,$lastname,$email,$phone){
 // if input not true redirect to index.php
   if(!$firstname||!$lastname||!$email||!$phone) {
     header('Location: '.'http://localhost:5777/index.php');
     $GLOBALS['disabledb'] = true;
     }
 }
-redirectIndex($name,$firstname,$lastname,$email,$phone);
+redirectIndex($firstname,$lastname,$email,$phone);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +50,11 @@ redirectIndex($name,$firstname,$lastname,$email,$phone);
               // connect database
               // $pginfo = phpinfo();
               $pipeline = pg_connect("host=localhost user=reguser_503 port=5432 dbname=lawnservice");
-                $insertuser = pg_query($pipeline, "insert into pipeline(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
+              
+                // insecure query
+                // $insertuser = pg_query($pipeline, "insert into pipeline(firstname,lastname,phone,email) values('$firstname','$lastname','$phone','$email')");
+                // secure query (parameters)
+                $insertuser = pg_query_params($pipeline, "insert into pipeline(firstname,lastname,phone,email) values($1,$2,$3,$4)", array($firstname,$lastname,$phone,$email));
               // $result = pg_query($pool, "select * from userbase");
               // $result = pg_fetch_all($result);
               echo "<br>";

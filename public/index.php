@@ -29,7 +29,8 @@
         <div id="cta-container" class="reg-column">
           <!-- form -->
            <form id="cta-form" method="POST" action="http://localhost:5777/submission.php">
-            <input type="text" name="name" id="name-input" autocomplete = "off" placeholder="Full Name" required>
+            <input type="text" name="fname" id="name-input" autocomplete = "off" placeholder="First Name" required>
+            <input type="text" name="lname" id="name-input" autocomplete = "off" placeholder="Last Name" required>
             <input type="email" name="email" id="email-input" autocomplete = "off" placeholder="Email" required>
             <input type="text" name="phone" id="phone-input" autocomplete = "off" placeholder="Phone">
             <p id="submit-para">Send</p>
@@ -83,6 +84,7 @@
             <!-- form -->
             <form id="cta-form" method="POST" action="http://localhost:5777/submission.php">
               <input type="text" name="name" id="name-input" autocomplete = "off" placeholder="Full Name" required>
+              <input type="text" name="lname" id="name-input" autocomplete = "off" placeholder="Last Name" required>
               <input type="email" name="email" id="email-input" autocomplete = "off" placeholder="Email" required>
               <input type="text" name="phone" id="phone-input" autocomplete = "off" placeholder="Phone">
               <p id="submit-para">Send</p>
